@@ -64,7 +64,7 @@ AC_ARG_ENABLE(consumer_key, [AS_HELP_STRING(
   [--enable-consumer-key], [build cmdline_twitter with CONSUMER_KEY [default=none]])], 
   [], [])
 if test x"$enable_consumer_key" != "x";then
-   AC_MSG_RESULT([CONSUMER_KEY is successfully inputed])
+   AC_MSG_RESULT([CONSUMER_KEY is successfully inputted])
    AC_DEFINE_UNQUOTED([CONSUMER_KEY], [$enable_consumer_key], [cmdline_twitter CONSUMER_KEY])
 else
    AC_MSG_ERROR([CONSUMER_KEY can not find from enviroment! you must define CONSUMER_KEY])
@@ -76,7 +76,7 @@ AC_ARG_ENABLE(consumer_secret, [AS_HELP_STRING(
   [--enable-consumer-secret], [build cmdline_twitter with CONSUMER_SECRET [default=none]])], 
   [], [])
 if test x"$enable_consumer_secret" != "x";then
-   AC_MSG_RESULT([CONSUMER_SECRET is successfully inputed])
+   AC_MSG_RESULT([CONSUMER_SECRET is successfully inputted])
    AC_DEFINE_UNQUOTED([CONSUMER_SECRET], [$enable_consumer_secret], [cmdline_twitter CONSUMER_SECRET])
 else
    AC_MSG_ERROR([CONSUMER_SECRET can not find from enviroment! you must define CONSUMER_SECRET])
@@ -95,7 +95,7 @@ AC_TYPE_UINT8_T
 
 # Checks for library functions.
 AC_FUNC_STRTOD
-AC_CHECK_FUNCS([gettimeofday localeconv localtime_r memset mkdir modf setlocale tzset])
+AC_CHECK_FUNCS([gettimeofday localeconv localtime_r memset mkdir modf setlocale tzset strptime timegm])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
