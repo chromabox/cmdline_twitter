@@ -1,3 +1,4 @@
+ctw
 *.o
 *.lo
 *.log
@@ -23,11 +24,13 @@ extras/*
 *.dirstamp
 lt*.m4
 compile
+configure
 config.guess
 config.h
 config.log
 config.status
 config.sub
+config.*
 depcomp
 install-sh
 libtool

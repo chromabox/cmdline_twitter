@@ -11,6 +11,8 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
+AC_LIBTOOL_WIN32_DLL
+LT_INIT
 
 # Checks for libraries.
 dnl -------
