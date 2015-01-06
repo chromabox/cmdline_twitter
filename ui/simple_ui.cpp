@@ -155,10 +155,7 @@ void SimpleUI::RequestTest()
 // Twitterでは標準時刻(UTC)が記述されているのでこれを現地時刻に直す
 inline static void get_local_time_string(const std::string &src,std::string &dst)
 {
-#if defined(__MSYS__)
-	// TODO: MSYS2にはstrptimeが機能していないので今はこうしている…
-	dst = src;
-#else
+#if defined(HAVE_STRPTIME) && defined(HAVE_TIMEGM) && defined(HAVE_LOCALTIME_R)
 	string tmstr;
 	time_t tm;
 	struct tm tm_src,tm_dest;
@@ -175,7 +172,10 @@ inline static void get_local_time_string(const std::string &src,std::string &dst
 	
 	strftime(tmpstr,sizeof(tmpstr),"[%Y-%m-%d %T]",&tm_dest);
 	dst = tmpstr;
-#endif	//__MINGW32__
+#else
+	// TODO: MSYS2にはstrptimeが機能していないので今はこうしている…
+	dst = src;
+#endif
 }
 
 void SimpleUI::formatStatus(std::string &textstr)

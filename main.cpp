@@ -44,12 +44,11 @@
 using namespace std;
 
 // バージョン
-static const string THIS_VERSION	= "0.0.2";
+static const string THIS_VERSION	= "PACKAGE_VERSION";
 
 // 設定ファイル保存先
 static const string	DEFAULT_AUTH_FILE = ".authkey_";
 static const string	APP_DIR = ".ctw";
-
 static const string	DEFAULT_SETTING_FILE = "ctwrc";
 
 
